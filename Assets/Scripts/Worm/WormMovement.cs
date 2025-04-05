@@ -35,7 +35,7 @@ public class WormMovement : MonoBehaviour
 
     private void Update()
     {
-        wormRigidBody.velocity = -transform.up * wormSpeed * speedMult;
+        wormRigidBody.linearVelocity = -transform.up * wormSpeed * speedMult;
 
         if (transform.position.x < -leftBorder)
         {

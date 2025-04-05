@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class UIControllerManager : MonoBehaviour
 {
-    [SerializeField]
+    [SerializeField, SceneObjectsOnly]
     protected GameObject firstSelected;
 
     private void Awake()

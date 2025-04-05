@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 10
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -38,13 +38,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 12
-  m_GIWorkflowMode: 1
+  serializedVersion: 13
+  m_BakeOnSceneLoad: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -67,9 +66,6 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
-    m_FinalGather: 0
-    m_FinalGatherFiltering: 1
-    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 1
@@ -123,26 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &9614880 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4333011913010374884, guid: 76ca7a8cf7ad9a843b465e35d11c9b99, type: 3}
-  m_PrefabInstance: {fileID: 1025156857}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &9614885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9614880}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9961c5221927203489981161b0a784bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  facts: []
-  upPosition: 0
-  speedySpeed: 0
 --- !u!1 &10348089
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,6 +147,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -7490094287013076529, guid: 992eec2c069c75643ab6b93a7fca6020, type: 2}
   m_audioClip: {fileID: 8300000, guid: 97d11b5804f577a42aa153c90046bc38, type: 3}
+  m_Resource: {fileID: 8300000, guid: 97d11b5804f577a42aa153c90046bc38, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -377,9 +354,8 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 36756885}
   m_Enabled: 1
-  serializedVersion: 10
+  serializedVersion: 11
   m_Type: 1
-  m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
   m_Range: 10
@@ -429,8 +405,12 @@ Light:
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
+  m_ForceVisible: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+  m_LightUnit: 1
+  m_LuxAtDistance: 1
+  m_EnableSpotReflector: 1
 --- !u!4 &36756887
 Transform:
   m_ObjectHideFlags: 0
@@ -820,10 +800,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4333011913010374884, guid: 76ca7a8cf7ad9a843b465e35d11c9b99, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 9614885}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76ca7a8cf7ad9a843b465e35d11c9b99, type: 3}
 --- !u!1001 &1121013961
 PrefabInstance:
@@ -836,6 +813,10 @@ PrefabInstance:
     - target: {fileID: 4661469246629763543, guid: 6d92fda4849f885409488cd5e31ec434, type: 3}
       propertyPath: m_SortingOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4661469246629763545, guid: 6d92fda4849f885409488cd5e31ec434, type: 3}
+      propertyPath: m_BlockingMask.m_Bits
+      value: 3221225527
       objectReference: {fileID: 0}
     - target: {fileID: 4661469246629763546, guid: 6d92fda4849f885409488cd5e31ec434, type: 3}
       propertyPath: m_Pivot.x
@@ -1391,6 +1372,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 4583519248182830020, guid: 992eec2c069c75643ab6b93a7fca6020, type: 2}
   m_audioClip: {fileID: 8300000, guid: 7d0a0c95f208b584ab69ff10baea9047, type: 3}
+  m_Resource: {fileID: 8300000, guid: 7d0a0c95f208b584ab69ff10baea9047, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1922,6 +1904,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7008958881519672671, guid: 31886d3161f1ebf4dbd1059f98587073, type: 3}
+      propertyPath: m_BlockingMask.m_Bits
+      value: 3221225527
+      objectReference: {fileID: 0}
     - target: {fileID: 7173821427200721980, guid: 31886d3161f1ebf4dbd1059f98587073, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2044,27 +2030,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8353285498748569853, guid: 31886d3161f1ebf4dbd1059f98587073, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8353285498748569853, guid: 31886d3161f1ebf4dbd1059f98587073, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8353285498748569853, guid: 31886d3161f1ebf4dbd1059f98587073, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 580
       objectReference: {fileID: 0}
     - target: {fileID: 8353285498748569853, guid: 31886d3161f1ebf4dbd1059f98587073, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8353285498748569853, guid: 31886d3161f1ebf4dbd1059f98587073, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 290
       objectReference: {fileID: 0}
     - target: {fileID: 8353285498748569853, guid: 31886d3161f1ebf4dbd1059f98587073, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2292,11 +2278,15 @@ PrefabInstance:
       value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 4834530051561994334, guid: 9e4ac816900cb714b903d053af5c0727, type: 3}
-      propertyPath: facts.Array.data[31]
+      propertyPath: 'facts.Array.data[1]'
+      value: Our cute worm boy is called Jimdinant, and his rival is Baureihel!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834530051561994334, guid: 9e4ac816900cb714b903d053af5c0727, type: 3}
+      propertyPath: 'facts.Array.data[31]'
       value: Hehe monkey
       objectReference: {fileID: 0}
     - target: {fileID: 4834530051561994334, guid: 9e4ac816900cb714b903d053af5c0727, type: 3}
-      propertyPath: facts.Array.data[32]
+      propertyPath: 'facts.Array.data[32]'
       value: We stole this from Minecraft :)
       objectReference: {fileID: 0}
     - target: {fileID: 4834530051561994335, guid: 9e4ac816900cb714b903d053af5c0727, type: 3}
@@ -2647,6 +2637,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4834530052142365431, guid: 9e4ac816900cb714b903d053af5c0727, type: 3}
+      propertyPath: m_BlockingMask.m_Bits
+      value: 3221225527
+      objectReference: {fileID: 0}
     - target: {fileID: 4834530052883725138, guid: 9e4ac816900cb714b903d053af5c0727, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2831,6 +2825,10 @@ PrefabInstance:
     - target: {fileID: 8943633178547214312, guid: ab1612e5aaa31a948b4f9b20963dcb7b, type: 3}
       propertyPath: m_Name
       value: BG Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8943633178547214313, guid: ab1612e5aaa31a948b4f9b20963dcb7b, type: 3}
+      propertyPath: m_BlockingMask.m_Bits
+      value: 3221225527
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
